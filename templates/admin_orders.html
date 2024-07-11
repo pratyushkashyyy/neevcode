@@ -1,0 +1,39 @@
+{% extends "admin_dashboard.html" %}
+
+{% block content %}
+<div class="orders-container">
+    <h2>Orders</h2>
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Namw</th>
+                <th>Products</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>payment ID</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_detail in order_details %}
+            <tr>
+                <td>{{ order_detail.order.id }}</td>
+                <td>{{ order_detail.order.name }}</td>
+                <td>
+                    <ul>
+                        {% for product in order_detail.products %}
+                        <li>{{ product.product_name }} - ${{ product.price }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ order_detail.order.total_amount }}</td>
+                <td>{{ order_detail.order.status }}</td>
+                <td>{{ order_detail.order.razr_pid }}</td>
+                <td>{{ order_detail.order.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

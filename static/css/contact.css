@@ -1,0 +1,266 @@
+.info-section {
+  width: 40%;
+  height: 500px;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
+  color: white;
+  position: relative; /* Position relative for absolute positioning */
+}
+
+.info-section h1 {
+  font-size: 2.5em; /* Larger font size for headings */
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 1.1em; /* Increased font size for paragraphs */
+  line-height: 1.5; /* Improved line spacing for readability */
+}
+
+.contact-info {
+  margin-top: 30px; /* Add some space between paragraphs and social media icons */
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h2 {
+  font-size: 1.5em; /* Larger font size for social media heading */
+  margin-bottom: 10px;
+}
+
+.social-media ion-icon {
+  font-size: 2em; /* Larger icon size */
+  color: #fff; /* White color for icons */
+  margin-right: 15px; /* Add some space between icons */
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.social-media ion-icon:hover {
+  color: #f0f0f0; /* Lighter color on hover */
+  transform: scale(1.2); /* Scale the icon on hover */
+}
+
+.contact-info h2 {
+  font-size: 1.5em; /* Adjust heading font size */
+  margin-bottom: 10px; /* Add some space below heading */
+}
+
+.contact-info p {
+  font-size: 1.1em; /* Adjust paragraph font size */
+  margin-bottom: 5px; /* Add some space below each paragraph */
+}
+
+.contact-info a {
+  color: #fff; /* Change link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+.contact-info a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.contact-info ion-icon {
+  font-size: 1.2em; /* Adjust icon size */
+  margin-right: 5px; /* Add some space between icon and text */
+}
+
+
+
+#contact-form {
+  width: 400px; /* Set the desired width */
+  height: 410px; /* Set the desired height */
+  margin: auto; /* Center the form horizontally */
+}
+#contact-message {
+  width: 100%; /* Set the width to 100% for full width */
+  height: 100px; /* Set the desired height */
+  resize: auto; /* Prevent the user from resizing the textarea */
+}
+
+
+.form-section {
+  background-color: rgba(255, 255, 255, 0); /* Adjust the alpha value for transparency */
+  backdrop-filter: blur(10px); /* Adjust the blur value for the desired effect */
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-content {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* Text color */
+}
+
+.form-group input,
+.form-group textarea {
+  width: calc(100% - 20px); /* Adjusted for padding */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px; /* Font size */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  font-size: 16px; /* Font size */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+#switch-form-btn {
+  padding: 12px 24px; /* Increased padding for better touchability */
+  background-color: #28a745; /* Green background color */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px; /* Font size */
+  position: absolute; /* Positioning relative to the info-section */
+  top: 85%; /* Adjusted top position */
+  right: 5%; /* Adjusted right position */
+  z-index: 2; /* Ensure button appears above other elements */
+}   
+
+#switch-form-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#internship-form {
+  display: none;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* Text color */
+}
+
+/* Style for the file input */
+.form-group input[type="file"] {
+  width: calc(100% - 20px); /* Adjusted for padding */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px; /* Font size */
+  background-color: white;
+  color: #333; /* Text color */
+}
+
+/* Style for the file input on hover */
+.form-group input[type="file"]:hover {
+  border-color: #007BFF; /* Change border color on hover */
+}
+
+/* Style for the file input on focus */
+.form-group input[type="file"]:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #007BFF; /* Change border color on focus */
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .info-section, .form-section {
+      width: 90%;
+      margin-bottom: 20px;
+  }
+  #switch-form-btn {
+      position: relative;
+      margin-top: 20px;
+      top: 0;
+      right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-section, .form-section {
+      padding: 15px;
+  }
+  .form-content {
+      padding: 15px;
+  }
+  .form-group input,
+  .form-group textarea {
+      font-size: 14px;
+  }
+  button {
+      font-size: 14px;
+      padding: 8px 15px;
+  }
+  #switch-form-btn {
+      padding: 8px 15px;
+      margin-top: 20px;
+      right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-section, .form-section {
+      width: 90%;
+  }
+  #switch-form-btn {
+      padding: 10px 20px;
+      margin-top: 20px;
+      right: 0;
+  }
+}
+
+@media (max-width: 412px) {
+  #contact-form {
+      padding: 20px; /* Add padding to the contact form */
+  }
+}

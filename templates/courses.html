@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %} Courses {% endblock %}
+{% block css %} 
+<link rel="stylesheet" href="/static/css/courses.css">
+{% endblock %}
+
+{% block content %}
+
+   <section class="section section-hero has-bg-image" id="home" aria-label="home" style="background-image: url('/static/images/hero-bg.svg')">
+    <div class="container">
+      <div class="section-hero-content">
+        <h1 class="h1 section-title">
+          COURSES WE <div class="span">OFFER</div>
+        </h1>
+        <p class="section-hero-text">
+          Discover a world of learning tailored just for you! Our courses are crafted with passion and expertise to meet your unique needs, whether you're starting from scratch or aiming to level up your skills. From the basics of programming to advanced techniques in cybersecurity and beyond, we're here to guide you every step of the way. Join our vibrant community of learners and embark on an exciting journey of growth and discovery. Let's unlock your potential together!        </p>
+      </div>
+    </div>
+  </section>
+
+<h1>Courses</h1><center>
+<div class="card-container">
+    {% for product in products %}
+        <div class="card">
+            <img src="{{ product['image_url'] }}" alt="{{ product['product_name'] }}">
+            <div class="card-content">
+                <h2>{{ product['product_name'] }}</h2>
+                <p>${{ product['price'] }}</p>
+                <p>{{ product['description'] }}</p>
+                <p>Level: {{ product['level'] }}</p>
+                <form action="{{ url_for('add_cart')}}" method="POST">
+                <input type="hidden" name="product_id" value="{{product['id']}}">
+                <button class="buy_btn" type="submit">Buy Now</button>
+                </form>
+                <!-- <p>Classes: {{ product['classes'] }}</p>
+                <p>Audience: {{ product['audience'] }}</p>
+                <p>Rating: {{ product['rating'] }}</p> -->
+            </div>
+        </div>
+    {% endfor %}
+</div></center>
+
+</div>
+  <script src="/static/js/script.js" defer></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock %}

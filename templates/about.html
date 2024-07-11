@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %} About us {% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}"> {% endblock %}
+
+{% block content %}
+
+    <section class="section section-hero has-bg-image" id="home" aria-label="home" style="background-image: url('/static/images/hero-bg.svg')">
+        <div class="container">
+            <div class="section-hero-content">
+                <h1 class="h1 section-title">About <span class="span">Us</span></h1>
+                <p class="section-hero-text">
+                    Welcome to NeevCode, where coding meets creativity! At NeevCode, we believe in empowering children with the essential skills for the digital age. Through interactive and engaging coding lessons, we foster a supportive environment where young minds can explore, create, and innovate. Join us on this exciting journey of learning and discovery!
+                </p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- Quote Section -->
+    <section class="about-us">
+        <div class="quote">
+            <svg class="quote-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFA500" d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
+            </svg>
+        </div>
+        <div class="about-us-content">
+            <h3>At NeevCode, we're committed to staying ahead in the tech curve. Our curriculum spans a spectrum of essential technologies, including Artificial Intelligence, Cybersecurity, Robotics, Networking, and more. These college-level topics are skillfully adapted to suit your child's learning journey, ensuring they not only grasp the concepts but also find joy and fascination in the world of coding.</h3>
+        </div>
+        <hr class="separator">
+        <div class="founder">
+            <h4>Garv Kamra</h4>
+            <p>Founder</p>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+
+    <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container">
+            <img class="mainImg" src="/static/images/our-mission.png">
+          <div class="allText aboveText">
+            <p class="text-blk headingText">
+              Our Mission
+            </p>
+            <p class="text-blk subHeadingText">
+                Engaging and Accessible Education
+            </p>
+            <p class="text-blk description">
+                At NeevCode, our mission is simple: to empower young minds with the skills and confidence to thrive in the digital world. Through engaging and accessible coding education, we inspire creativity, foster curiosity, and unlock the potential of every child. Join us in shaping a future where innovation knows no bounds            </p>
+            <!-- <button class="explore">
+              Explore
+            </button> -->
+          </div>
+        </div>
+        <div class="responsive-container-block Container bottomContainer">
+          <img class="mainImg" src="/static/images/our-vision.png">
+          <div class="allText bottomText">
+            <p class="text-blk headingText">
+              Our Vision
+            </p>
+            <p class="text-blk subHeadingText">
+                Unlock Your Coding Potential with NeevCode.
+            </p>
+            <p class="text-blk description">
+                At NeevCode, we’re not just teaching coding; we’re igniting a passion for technology in your child. Our interactive courses are specifically designed to make learning fun and accessible, ensuring your child develops vital skills while having a blast. What sets us apart is our dedication to providing opportunities for students and freshers to work with us, fostering a culture of innovation and growth. With our cutting-edge curriculum and supportive community, your child will not only excel in coding but also become a part of shaping the future of technology. Join NeevCode today and give your child the edge they need to succeed in the digital age.
+            </p>
+            <!-- <button class="btn">
+              Explore
+            </button> -->
+          </div>
+        </div>
+      </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/ionicons.min.js"></script>
+    <script src="/static/js/script.js"></script>
+{% endblock %}

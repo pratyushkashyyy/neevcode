@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('/static/images/404\ page.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .container {
+      display: inline;
+      text-align: center;
+      color: #fff;
+    }
+    button {
+      
+      padding: 20px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 200px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    @media (min-width: 768px){
+      .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .body{
+        display: flex;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a href="index.html"><button>Back to Home</button></a>
+  </div>
+</body>
+</html>

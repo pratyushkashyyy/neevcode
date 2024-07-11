@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Terms & Conditions - NeevCode</title>
+  <meta name="title" content="NeevCode - Nurturing Futures...>
+  <meta name="description" content=" Where young minds embark on a coding journey crafted for the future! ">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/static/css/t&c.css">
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+    <link rel="stylesheet" href="static/css/t&c.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/static/images/hero-bg.svg">
+  <link rel="preload" as="image" href="/static/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="/static/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="/static/images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="/static/images/hero-shape-2.png">
+
+</head>
+
+<body id="top">
+ <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+      </a>  
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link" data-nav-link target="_top">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link target="_top">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link target="_top">Courses</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pricing.html" class="navbar-link" data-nav-link target="_top">Pricing</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact-us.html" class="navbar-link" data-nav-link target="_top">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+  
+        <button class="header-action-btn" aria-label="toggle search" title="Search">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <button class="header-action-btn" aria-label="cart" title="Cart" onclick="toggleCart()">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <span class="btn-badge" id="cartItemCount">0</span>
+        </button>
+
+        <a href="trialclass.html" class="btn has-before">
+          <span class="span">Start Learning</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+</header>
+
+<div class="cart-sidebar" id="cartSidebar">
+  <button class="close-sidebar-btn" onclick="toggleCart()">Close</button>
+  <div class="cart-items">
+    <!-- Cart items will be dynamically added here -->
+  </div>
+  <button class="buy-now-btn">Buy Now</button>
+</div>
+
+
+<br><br><br><br>
+
+<!-- T&C -->
+
+<div class="terms-and-conditions-content">
+
+    <header>
+    <h1>TERMS AND CONDITIONS</h1>
+    <p>PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. BY USING THIS WEBSITE AND/OR PLATFORM YOU AGREE TO BE BOUND BY ALL OF THE BELOW TERMS AND CONDITIONS.</p>
+  </header>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>NeevCode (hereinafter referred to as “Company”, “We” or “Us”) operates a website <span><a href="https://www.neevcode.com/">https://www.neevcode.com/</a></span>and mobile/tablet application (together called as “Platform”) which is engaged in the service of online coding education for children.</p>
+    <p>These terms and conditions (“Terms”) describe the terms on which the Company grants end users access to the Platform (hereinafter referred to as “Services”) and shall be read with the privacy policy available on <span><a href="https://www.neevcode.com/privacy-policy">Privacy Policy</a></span>. Anyone below 18 years of age is assumed to be a child (“Child”) and requires parental consent to use the Platform. The parents of the Child or users above 18 years of age are hereinafter referred to as “you”, “your” or “yours”. The term “Users” for the purposes of these Terms shall be read as You and/or Child. Users also include all persons who access, browse, or sign up on the Platform for applying to teach on the Platform (“Applicant(s)”) and those selected to teach on the Platform (“Instructor(s)”).</p>
+    <p>The Company reserves the right, at its discretion, to change, modify, add, or remove portions of these Terms at any time by posting the amended Terms. Please check these Terms periodically for changes. Your continued use of the Platform or Services after the posting of changes constitutes your binding acceptance of such changes. In addition, when using any particular services or availing any promotional offer, you may be subject to additional terms and conditions, posted guidelines, or rules, as may be applicable to such services and offers. All such guidelines, rules, product requirements, or sometimes additional terms are hereby incorporated by reference into the Terms.</p>
+  </section>
+
+  <section>
+    <h2>2. Terms of Service</h2>
+    <p>By choosing to visit the Platform and/or avail any Services provided by Company, you agree to be bound by these Terms. Please read the following information carefully. If you are a parent or guardian and you provide your consent for your child's use of the Platform, you agree to be bound by these Terms in respect to their use of the Platform. By your continued access or use of the Platform, you signify your agreement to be legally bound by the Terms set forth herein. If you do not agree to the Terms of this agreement, promptly exit this page and stop accessing the Services.</p>
+  </section>
+
+  <section>
+    <h2>3. Description of Services</h2>
+    <p>The Company facilitates online coding education services to children. The concept is to provide interactive and engaging coding lessons that empower children to learn coding skills in a flexible and supportive environment.</p>
+    <h3>Trial Classes:</h3>
+    <ul>
+      <li>New members are offered one free trial class to experience the services provided.</li>
+      <li>Only one free trial class is permitted per new student, and multiple availments without permission constitute a breach of terms.</li>
+    </ul>
+    <h3>Modules and Curriculum:</h3>
+    <ul>
+      <li>The Company provides modules and curriculum for students to complete, with assistance from tutors.</li>
+      <li>Users are granted access to material, content, and curriculum related to their registered modules, subject to amendments by the Company.</li>
+    </ul>
+    <h3>Use of the Platform by Applicants and Instructors:</h3>
+    <ul>
+      <li>Applicants interested in teaching on the Platform may apply by providing contact details.</li>
+      <li>The NeevCode team evaluates applicants, and selected individuals may be onboarded as Instructors.</li>
+      <li>Terms and Privacy Policy apply to Instructors, along with an engagement agreement provided separately.</li>
+      <li>Ratings and reviews left by children or parents for classes are not the responsibility of the Company.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. License to Use:</h2>
+    <p>The Company grants Users a limited, non-transferable, non-exclusive, and revocable license to access and use the Platform for specific purposes, including viewing, posting, or submitting user material.</p>
+    <p>This license is for personal and non-commercial use only and may be suspended or denied by the Company at its discretion.</p>
+    <p>Users are prohibited from reproducing, transmitting, distributing, or preparing derivative works of the Curriculum without prior written consent from the Company.</p>
+  </section>
+
+  <section>
+    <h2>5. Intellectual Property Rights:</h2>
+    <p>The Company asserts ownership of the Platform, services, curriculum, and content, holding all Intellectual Property Rights.</p>
+    <p>Users acknowledge the Company's right to record classes and related activities, with exclusive rights to use, publish, and create derivative works from such recordings.</p>
+    <p>Events conducted by the Company and associated materials, including Success Stories, are deemed the exclusive property of the Company.</p>
+    <p>Users are prohibited from reproducing or sharing Company-owned materials without prior written consent.</p>
+    <p>The Company retains all rights to information provided on the Platform and social media channels, prohibiting unauthorized copying, downloading, publishing, or distribution.</p>
+    <p>The Company maintains ownership of video recordings, sound/audio recordings, images, and other materials posted on the Platform, with Users prohibited from recording or reproducing such content without prior written approval.</p>
+  </section>
+
+  <section>
+    <h2>6. Use of the Platform by the Child:</h2>
+    <p>You expressly acknowledge and undertake that:</p>
+    <ul>
+      <li>You are competent and possess all necessary legal rights to enter into this agreement on behalf of the child.</li>
+      <li>You grant consent to the Company for your child's participation in classes, courses, tests, sessions, and/or any other program conducted or organized by the Company on its Platform. You agree that the child's participation and activities will be under your direct and constant supervision. Furthermore, you accept full liability for any actions taken by the child, whether direct or indirect.</li>
+      <li>You understand and agree that the child will have access to the Company's comprehensive curriculum, featuring interactive and engaging coding lessons aimed at empowering children to learn essential coding skills in a flexible and supportive environment.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Payment and Refund</h2>
+    <p>NeevCode offers flexible payment options for its services through the Razorpay payment gateway. Our platform provides various plans, including monthly subscriptions with a limit on the number of classes per month. Please review our detailed refund policy for more information.</p>
+    <h3>Payment Authorization:</h3>
+    <ul>
+      <li>By using our platform, users authorize NeevCode to charge them according to the selected plans and payment mode chosen during checkout.</li>
+    </ul>
+    <h3>Payment Methods:</h3>
+    <ul>
+      <li>Payments shall be made through the payment mechanism provided by Razorpay, and users are responsible for paying all fees and applicable taxes associated with their chosen plan.</li>
+    </ul>
+    <h3>Refund Policy:</h3>
+    <ul>
+      <li>Refund requests will be accepted within 45 days of the initial payment. Refunds will not be processed for monthly plans with a limit on classes per month. For detailed refund terms, please visit our Refund Policy Page.</li>
+    </ul>
+    <h3>Refund Timeline:</h3>
+    <ul>
+      <li>We aim to process refund requests within 10-15 business days from the date of receiving the request.</li>
+    </ul>
+    <h3>Fee Changes:</h3>
+    <ul>
+      <li>NeevCode reserves the right to change fees at any time, with immediate effect upon posting on our website.</li>
+    </ul>
+    <h3>Additional Charges:</h3>
+    <ul>
+      <li>Any charges related to app publishing, such as those levied by app stores, will be borne by the user.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Linking</h2>
+    <p>You or the Child may establish a link to one or more sites, provided that:</p>
+    <ul>
+      <li>The link is legal and does not detract from or damage our reputation or business.</li>
+      <li>Such linking is not for advertising or promotional purposes unless expressly agreed to by us.</li>
+      <li>The link is not from any website promoting political or religious views, intolerance, hatred, discrimination, violence, pornography, or illegal activity.</li>
+      <li>The link does not falsely or misleadingly imply that we endorse, approve, or are associated with the linked website, its web pages, or any of its contents.</li>
+      <li>Framing of any site on any other website is prohibited, and you must not provide access to the site or part of it under any other URL.</li>
+    </ul>
+    <p>The Company reserves the right to withdraw your or the Child’s right to link to any site without notice and at any time, at our sole discretion.</p>
+    <p>Where any site or application contains links to other websites, web pages, resources, or mobile services proprietary to third parties, other users, advertisers, or sponsors, such websites, web pages, resources, and mobile services are provided for your information only. You access them at your own risk. The Company shall not be liable or responsible for the content or operation of third-party websites, web pages, resources, or mobile services.</p>
+  </section>
+
+  <section>
+    <h2>9. Third Party Services:</h2>
+    <p>Our services may include software, products, and services developed by third parties.</p>
+    <p>Your use of third-party services is governed by their respective terms and conditions and privacy policies.</p>
+    <p>We are not responsible for any errors, malfunctions, or defects in third-party services.</p>
+  </section>
+
+  <section>
+    <h2>10. Third Party Permission:</h2>
+    <p>By accepting these terms, you grant permission to third-party service providers to use your information.</p>
+    <p>We do not disclose personal data to third parties for direct marketing purposes.</p>
+    <p>Non-personal, de-identified, or aggregated information may be shared with third parties for research, analytics, or promotional purposes.</p>
+    <p>We require third parties to protect and restrict the use of your information.</p>
+    <p>In case of disputes with third parties, we are not liable.</p>
+  </section>
+
+  <section>
+    <h2>11. Data Privacy and Security</h2>
+    <h3>Collection and Use of Personal Information:</h3>
+    <ul>
+      <li>We collect personal information from users in accordance with our Privacy Policy.</li>
+      <li>By using our platform, you consent to the collection, storage, and use of your personal information as outlined in the Privacy Policy.</li>
+    </ul>
+    <h3>Confidentiality:</h3>
+    <ul>
+      <li>We are committed to maintaining the confidentiality of user data.</li>
+      <li>We employ industry-standard security measures to protect against unauthorized access, alteration, disclosure, or destruction of personal information.</li>
+    </ul>
+    <h3>Data Retention:</h3>
+    <ul>
+      <li>We retain user data only for as long as necessary to fulfill the purposes outlined in our Privacy Policy.</li>
+      <li>Upon termination of your account, we may retain certain information as required by law or for legitimate business purposes.</li>
+    </ul>
+    <h3>Third-Party Services:</h3>
+    <ul>
+      <li>We may use third-party services for data processing, storage, or analysis.</li>
+      <li>These third parties are contractually obligated to adhere to data protection standards and are prohibited from using your personal information for any purpose other than providing the contracted services.</li>
+    </ul>
+    <h3>User Responsibilities:</h3>
+    <ul>
+      <li>Users are responsible for maintaining the security of their account credentials.</li>
+      <li>Prompt notification of any unauthorized access or use of their account is required.</li>
+    </ul>
+    <h3>Updates to Privacy Policy:</h3>
+    <ul>
+      <li>We reserve the right to update our Privacy Policy to reflect changes in our data processing practices or legal requirements.</li>
+      <li>Users will be notified of any material changes to the Privacy Policy.</li>
+    </ul>
+    <p>By using our platform, you agree to the terms outlined in this Data Privacy and Security section and our Privacy Policy.</p>
+    <h3>Children's Online Privacy Protection Act (COPPA) Compliance:</h3>
+    <p>NeevCode is committed to complying with the Children's Online Privacy Protection Act (COPPA) and protecting the privacy of children who use our services. As such, we do not knowingly collect personal information from children under the age of 13 without verifiable parental consent.</p>
+    <p>If you are under 13 years of age, you are not permitted to register on our site unless such registration is completed by a parent or legal guardian. By using our platform, you affirm that you are at least 18 years old or that your registration has been completed by a parent or legal guardian.</p>
+    <p>In compliance with COPPA, we may collect certain personal information from children under 13, such as name, email address, and age, only with verifiable parental consent. We use this information solely for the purpose of providing our services and do not disclose it to third parties except as described in our Privacy Policy.</p>
+    <p>Parents or legal guardians have the right to review the personal information collected from their child, request its deletion, and refuse to permit further collection or use of the child's information. To exercise these rights or to learn more about our data practices, please contact us at <span><a href="mailto:contact@neevcode.com">contact@neevcode.com</a></span>.</p>
+    <p>By using our platform, you acknowledge and agree to our compliance with COPPA and our commitment to protecting the privacy of children online.</p>
+  </section>
+
+  <section>
+    <h2>12. User Content</h2>
+    <p>By using our platform, you may submit content, including articles, comments, photos, and videos. However, please ensure that your content:</p>
+    <ul>
+      <li>Is not misleading, defamatory, abusive, or offensive.</li>
+      <li>Does not infringe on any third-party rights, including intellectual property rights.</li>
+      <li>Does not contain viruses or other harmful elements.</li>
+    </ul>
+    <p>You grant us permission to use and distribute the content you submit.</p>
+  </section>
+
+  <section>
+    <h2>13. Intellectual Property</h2>
+    <p>Any content created by your child on our platform belongs to us, and we have the right to use it for our purposes.</p>
+  </section>
+
+  <section>
+    <h2>14. User Obligations</h2>
+    <p>You and your child agree to use our platform responsibly and not for any unlawful purposes.</p>
+  </section>
+
+  <section>
+    <h2>15. Disclaimer</h2>
+    <p>We are not responsible for any content submitted by users, and users are responsible for ensuring their content complies with our guidelines.</p>
+  </section>
+
+  <section>
+    <h2>16. Intended Purpose of Use</h2>
+    <p>The Platform provided by NeevCode is intended solely for the purpose of facilitating online coding education services to children. Users agree to utilize the Platform in accordance with its intended purpose and shall refrain from any unauthorized or unlawful activities.</p>
+  </section>
+
+  <section>
+    <h2>17. Fitness of Use</h2>
+    <p>While NeevCode strives to provide a reliable and efficient Platform, users acknowledge that the services are provided on an "as is" and "as available" basis. NeevCode makes no representations or warranties regarding the suitability, reliability, availability, or accuracy of the Platform for any particular purpose. Users agree to use the Platform at their own risk.</p>
+  </section>
+
+  <section>
+    <h2>18. Rules of Conduct</h2>
+    <p>Users are expected to adhere to certain rules of conduct while using the Platform. This includes refraining from engaging in any behavior that may:</p>
+    <ul>
+      <li>Violate any applicable laws or regulations.</li>
+      <li>Infringe upon the rights of others, including intellectual property rights.</li>
+      <li>Harass, intimidate, or discriminate against any individual or group.</li>
+      <li>Disrupt or interfere with the operation of the Platform or the experiences of other users.</li>
+      <li>Transmit any harmful or malicious content, including viruses or malware.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>19. Limited Liability</h2>
+    <p>In no event shall NeevCode be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising out of or in connection with the use or inability to use the Platform or its services, even if NeevCode has been advised of the possibility of such damages.</p>
+  </section>
+
+  <section>
+    <h2>20. Termination</h2>
+    <p>NeevCode reserves the right to suspend or terminate access to the Platform or its services at any time, without prior notice or liability, for any reason whatsoever, including but not limited to a breach of these terms and conditions or fraudulent activities.</p>
+  </section>
+
+  <section>
+    <h2>21. Dispute Resolution</h2>
+    <p>Any disputes arising out of or related to these terms and conditions shall be governed by the laws of Bengaluru, Karnataka. Users agree to first attempt to resolve any disputes informally by contacting NeevCode. If a resolution cannot be reached informally, users agree to submit to the exclusive jurisdiction of the courts located in Bengaluru, Karnataka.</p>
+  </section>
+
+  <section>
+    <h2>22. Entire Agreement</h2>
+    <p>These terms and conditions constitute the entire agreement between users and NeevCode regarding the use of the Platform and its services, superseding any prior agreements or understandings, whether oral or written.</p>
+  </section>
+
+  <section>
+    <h2>23. Contact</h2>
+    <p>For any inquiries or concerns regarding these terms and conditions or the use of the Platform, please contact NeevCode at <span class="tc"><a href="mailto:contact@neevcode.com">contact@neevcode.com</a></span>.</p>
+  </section>
+</div>
+<br><br>
+
+<!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('/static/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+          </a>
+
+          <p class="footer-brand-text">
+            At NeevCode, we’re not just teaching coding; we’re igniting a passion for technology in your child.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">Bengaluru, Karnataka</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+91 9606494229</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <span></span><a href="mailto:info@neevcode.com" class="footer-link">info@neevcode.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Online Platform</p>
+          </li>
+
+          <li>
+            <a href="./about.html" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="./courses.html" class="footer-link">Courses</a>
+          </li>
+
+          <li>
+            <a href="./pricing.html" class="footer-link">Pricing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Student Login</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Teacher Login</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Links</p>
+          </li>
+
+          <li>
+            <a href="./contact-us.html" target="_blank"  class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="terms&condition.html"  target="_blank"  class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="./privacy-policy.html"  target="_blank" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="./refund-policy.html"  target="_blank" class="footer-link">Refund Policy</a>
+          </li>
+
+          <li>
+            <a href="./faq.html" target="_blank"  class="footer-link">FAQ's</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Contacts</p>
+
+          <p class="footer-list-text">
+            Enter your email address to register to our newsletter subscription
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          Copyright 2024 All Rights Reserved by <a href="https://neevcode.com" class="copyright-link">NeevCode</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/static/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,32 @@
+<button id="rzp-button1">Pay with Razorpay</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+{% for user in users %}
+<script>
+var options = {
+    "key": "rzp_test_I4RI6OLrPcJeSM", // Enter the Key ID generated from the Dashboard
+    "amount": "{{pdata[0]}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "NEEV Code",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{pdata[1]}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "/success",
+    "prefill": {
+        "name": "{{ user['name'] }}",
+        "email": "{{ user['email'] }}",
+        "contact": "{{ user['phone'] }}"
+    },
+    "notes": {
+        "address": "{{ user['address'] }}"
+    },
+    "theme": {
+        "color": "#5cffab"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+    }
+    </script>
+{% endfor %}

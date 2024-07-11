@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Book Your Free Trial Class</title>
+  <meta name="title" content="NeevCode - Nurturing Futures...>
+  <meta name="description" content="Book Your Free Trial Class Today and start your journey with NeevCode">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="/static/images/hero-bg.svg">
+  <link rel="preload" as="image" href="/static/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="/static/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="/static/images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="/static/images/hero-shape-2.png">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+      </a>  
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link" data-nav-link target="_top">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link target="_top">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="courses.html" class="navbar-link" data-nav-link target="_top">Courses</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="pricing.html" class="navbar-link" data-nav-link target="_top">Pricing</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact-us.html" class="navbar-link" data-nav-link target="_top">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+  
+        <button class="header-action-btn" aria-label="toggle search" title="Search">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <button class="header-action-btn" aria-label="cart" title="Cart" onclick="toggleCart()">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <span class="btn-badge" id="cartItemCount">0</span>
+        </button>
+
+        <a href="trialclass.html" class="btn has-before">
+          <span class="span">Start Learning</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+</header>
+
+<div class="cart-sidebar" id="cartSidebar">
+  <button class="close-sidebar-btn" onclick="toggleCart()">Close</button>
+  <div class="cart-items">
+    <!-- Cart items will be dynamically added here -->
+  </div>
+  <button class="buy-now-btn">Buy Now</button>
+</div>
+
+
+<br><br><br>
+  <!-- Calendly inline widget begin -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+
+
+
+<!-- Calendly inline widget -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/neevcode/trial-class" style="min-width:320px;height:700px;"></div>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+<!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('/static/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/static/images/neevcode5.png" width="162" height="50" alt="NeevCode logo">
+          </a>
+
+          <p class="footer-brand-text">
+            At NeevCode, we’re not just teaching coding; we’re igniting a passion for technology in your child.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">Bengaluru, Karnataka</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+91 9606494229</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <span></span><a href="mailto:info@neevcode.com" class="footer-link">info@neevcode.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Online Platform</p>
+          </li>
+
+          <li>
+            <a href="./about.html" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="./courses.html" class="footer-link">Courses</a>
+          </li>
+
+          <li>
+            <a href="./pricing.html" class="footer-link">Pricing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Student Login</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Teacher Login</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Links</p>
+          </li>
+
+          <li>
+            <a href="./contact-us.html" target="_blank"  class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="terms&condition.html"  target="_blank"  class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="./privacy-policy.html"  target="_blank" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="./refund-policy.html"  target="_blank" class="footer-link">Refund Policy</a>
+          </li>
+
+          <li>
+            <a href="./faq.html" target="_blank"  class="footer-link">FAQ's</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Contacts</p>
+
+          <p class="footer-list-text">
+            Enter your email address to register to our newsletter subscription
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/neevcode" target="_blank" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          Copyright 2024 All Rights Reserved by <a href="https://neevcode.com" class="copyright-link">NeevCode</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+  
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+    <!-- 
+    - custom js link
+  -->
+
+    <script src="/static/js/pricing.js"></script>
+    <script src="/static/js/script.js" defer></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

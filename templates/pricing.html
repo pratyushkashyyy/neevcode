@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block title %} Pricing {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/pricing.css">
+{% endblock %}
+{% block content %}
+
+    <!-- PRICING -->
+
+    <div class="pricing-container">
+      <div class="pricing-switcher">
+        <p class="fieldset">
+          <input
+            type="radio"
+            name="duration-1"
+            value="monthly"
+            id="monthly-1"
+            checked
+          />
+          <label for="monthly-1">Indian</label>
+          <input type="radio" name="duration-1" value="yearly" id="yearly-1" />
+          <label for="yearly-1">International</label>
+          <span class="switch"></span>
+        </p>
+      </div>
+      <ul class="pricing-list bounce-invert">
+        <li class="custom-naveen">
+          <ul class="pricing-wrapper">
+            <li data-type="monthly" class="is-visible custom-naveen">
+              <header class="pricing-header">
+                <h2>Custom</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">6000*</span>
+                  <span class="duration">mo</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li>8 Classes Monthly</li>
+                  <li>Customize your own course</li>
+                  <li>Online one-on-one Classes</li>
+                  <li>Flexibility to cancel with no penalty.</li>
+                  <li>No refunds for monthly subscriptions</li>
+                  <li>24/7 Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="contact-us.html">Contact Us</a>
+              </footer>
+            </li>
+            <li data-type="yearly" class="is-hidden custom-naveen">
+              <header class="pricing-header">
+                <h2>Basic</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">320</span>
+                  <span class="duration">yr</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li><em>5</em> Email Accounts</li>
+                  <li><em>1</em> Template Style</li>
+                  <li><em>25</em> Products Loaded</li>
+                  <li><em>1</em> Image per Product</li>
+                  <li><em>Unlimited</em> Bandwidth</li>
+                  <li><em>24/7</em> Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="#">Buy Now</a>
+              </footer>
+            </li>
+          </ul>
+        </li>
+        <li class="exclusive custom-naveen">
+          <ul class="pricing-wrapper">
+            <li data-type="monthly" class="is-visible custom-naveen">
+              <header class="pricing-header">
+                <h2>Exclusive</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">60</span>
+                  <span class="duration">mo</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li><em>15</em> Email Accounts</li>
+                  <li><em>3</em> Template Styles</li>
+                  <li><em>40</em> Products Loaded</li>
+                  <li><em>7</em> Images per Product</li>
+                  <li><em>Unlimited</em> Bandwidth</li>
+                  <li><em>24/7</em> Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="#">Buy Now</a>
+              </footer>
+            </li>
+            <li data-type="yearly" class="is-hidden custom-naveen">
+              <header class="pricing-header">
+                <h2>Exclusive</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">630</span>
+                  <span class="duration">yr</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li><em>15</em> Email Accounts</li>
+                  <li><em>3</em> Template Styles</li>
+                  <li><em>40</em> Products Loaded</li>
+                  <li><em>7</em> Images per Product</li>
+                  <li><em>Unlimited</em> Bandwidth</li>
+                  <li><em>24/7</em> Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="#">Buy Now</a>
+              </footer>
+            </li>
+          </ul>
+        </li>
+        <li class="custom-naveen">
+          <ul class="pricing-wrapper">
+            <li data-type="monthly" class="is-visible custom-naveen">
+              <header class="pricing-header">
+                <h2>Pro</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">90</span>
+                  <span class="duration">mo</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li><em>20</em> Email Accounts</li>
+                  <li><em>5</em> Template Styles</li>
+                  <li><em>50</em> Products Loaded</li>
+                  <li><em>10</em> Images per Product</li>
+                  <li><em>Unlimited</em> Bandwidth</li>
+                  <li><em>24/7</em> Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="#">Buy Now</a>
+              </footer>
+            </li>
+            <li data-type="yearly" class="is-hidden custom-naveen">
+              <header class="pricing-header">
+                <h2>Pro</h2>
+                <div class="price">
+                  <span class="currency">₹</span>
+                  <span class="value">950</span>
+                  <span class="duration">yr</span>
+                </div>
+              </header>
+              <div class="pricing-body">
+                <ul class="pricing-features">
+                  <li><em>20</em> Email Accounts</li>
+                  <li><em>5</em> Template Styles</li>
+                  <li><em>50</em> Products Loaded</li>
+                  <li><em>10</em> Images per Product</li>
+                  <li><em>Unlimited</em> Bandwidth</li>
+                  <li><em>24/7</em> Support</li>
+                </ul>
+              </div>
+              <footer class="pricing-footer">
+                <a
+                  href="https://drive.google.com/file/d/1IgxxR14GUIzceLr64hqgzeKV9Ng5HPAB/view?usp=sharing"
+                  target="_blank"
+                  class="curriculum"
+                  >View Detailed Curriculum</a
+                >
+                <a class="select" href="#">Buy Now</a>
+              </footer>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+{% endblock %}
