@@ -1,107 +1,252 @@
 {% extends "base.html" %}
-{% block title %} Home {% endblock %}
-{% block css %} <link rel="stylesheet" href="/static/css/contact.css"> {% endblock %}
+{% block title %} Contact Us {% endblock %}
+
+{% block css %}
+<style>
+  body.custom-body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  .custom-contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .custom-contact-info, .custom-form-wrapper {
+    flex: 1;
+    margin: 10px;
+  }
+
+  .custom-contact-info {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .custom-contact-info h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .custom-contact-info p, .custom-contact-info a {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #666;
+    text-decoration: none;
+  }
+
+  .custom-contact-info p {
+    margin: 10px 0;
+  }
+
+  .custom-contact-info a:hover {
+    color: #000;
+  }
+
+  .custom-social-media-links h2 {
+    margin-top: 20px;
+    color: #333;
+  }
+
+  .custom-social-media-links ion-icon {
+    font-size: 2em;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+    color: #4093a4;
+  }
+
+  .custom-social-media-links ion-icon:hover {
+    transform: scale(1.2);
+  }
+
+  .custom-form-section {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    display: none;
+  }
+
+  .custom-form-section h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .custom-form-group {
+    margin-bottom: 20px;
+  }
+
+  .custom-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .custom-form-group input, .custom-form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+  }
+
+  .custom-btn {
+    padding: 10px 20px;
+    background-color: #4093a4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-btn:hover {
+    background-color: #367a8a;
+  }
+
+  .custom-switch-form-btn {
+    padding: 10px 20px;
+    background-color: #4093a4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .custom-switch-form-btn:hover {
+    background-color: #367a8a;
+  }
+</style>
+{% endblock %}
+
 {% block content %}
-    <div class="container">
-        <div class="info-section" id="info-section">
-            <h1>Let's get in touch</h1>
-            <p id="info-paragraph">Have questions or suggestions? We'd love to hear from you! Fill out the form, and our team of experts will get back to you as soon as possible. Your feedback is valuable to us, and we are here to assist you in any way we can.</p>
-            <div class="contact-info">
-                <!-- <h2>Become an Instructor with NeevCode</h2> -->
-                <p>Bengaluru, Karnataka</p>
-                <p><ion-icon name="mail-sharp"></ion-icon>  <a href="mailto:info@neevcode.com">info@neevcode.com</a></p>
-                <p><ion-icon name="call-sharp"></ion-icon> <a href="tel:+919606494229">+91 9606494229</a></p>
-            </div>
-            <div class="social-media">
-                <h2>Connect with us :</h2>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/neevcode" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="https://www.linkedin.com/company/neevcode" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-                    <a href="https://www.facebook.com/neevcode" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-                </div>
-            </div>
-            <button id="switch-form-btn">Switch to Apply for Internship</button>
-        </div>
-
-        <div class="form-section">
-            <!-- <button id="switch-form-btn">Switch to Apply for Internship</button> -->
-            <div class="form-wrapper">
-                <div class="form-container" id="form-container">
-                    <div class="form-content" id="contact-form">
-                        <h2>Contact Us</h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="contact-name">Name</label>
-                                <input type="text" id="contact-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact-email">Email</label>
-                                <input type="email" id="contact-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact-message">Message</label>
-                                <textarea id="contact-message" name="message" rows="4" required></textarea>
-                            </div>
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                    <div class="form-content" id="internship-form" style="display: none;">
-                        <h2>Apply for Internship</h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="internship-name">Name</label>
-                                <input type="text" id="internship-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="internship-email">Email</label>
-                                <input type="email" id="internship-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="internship-email">Phone</label>
-                                <input type="number" id="internship-email" name="number" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="internship-resume">Resume</label>
-                                <input type="file" id="internship-resume" name="resume" required>
-                            </div>
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<br><br><br><br>
+<div class="custom-container">
+  <div class="custom-contact-section">
+    <div class="custom-contact-info">
+      <h1>Let's get in touch</h1>
+      <p id="custom-info-paragraph">Have questions or suggestions? We'd love to hear from you! Fill out the form, and our team of experts will get back to you as soon as possible. Your feedback is valuable to us, and we are here to assist you in any way we can.</p>
+      <div class="custom-contact-details">
+        <p><ion-icon name="location-sharp"></ion-icon>301, Vishwas Regency, 15th cross road, Neeladari Nagar, Bengaluru, Karnataka, 560100</p>
+        <p><ion-icon name="mail-sharp"></ion-icon> <a href="mailto:info@neevcode.com">info@neevcode.com</a></p>
+        <p><ion-icon name="call-sharp"></ion-icon> <a href="tel:+918754571016">+91-8754571016</a></p>
+      </div>
+      <div class="custom-social-media-links">
+        <h2>Follow us on</h2>
+        <a href="https://www.facebook.com/neevcode" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <!-- <a href="https://twitter.com/neevcode" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a> -->
+        <a href="https://www.linkedin.com/company/neevcode" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="https://www.instagram.com/neevcode" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <!-- <a href="https://www.youtube.com/neevcode" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a> -->
+      </div>
+      <button class="custom-switch-form-btn" id="custom-switch-form-btn" onclick="toggleCustomForms()">Internship opportunities?</button>
     </div>
-    
+    <div class="custom-form-wrapper">
+      <div class="custom-form-section" id="custom-contact-form-section">
+        <h1>Contact Us</h1>
+        <form id="custom-contact-form">
+          <div class="custom-form-group">
+            <label for="custom-name">Name</label>
+            <input type="text" id="custom-name" name="name" required>
+          </div>
+          <div class="custom-form-group">
+            <label for="custom-email">Email</label>
+            <input type="email" id="custom-email" name="email" required>
+          </div>
+          <div class="custom-form-group">
+            <label for="custom-message">Message</label>
+            <textarea id="custom-contact-message" name="message" required></textarea>
+          </div>
+          <button class="custom-btn" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="custom-form-section" id="custom-internship-form-section">
+        <h1>Internship</h1>
+        <form id="custom-internship-form">
+          <div class="custom-form-group">
+            <label for="custom-internship-name">Name</label>
+            <input type="text" id="custom-internship-name" name="internship-name" required>
+          </div>
+          <div class="custom-form-group">
+            <label for="custom-internship-email">Email</label>
+            <input type="email" id="custom-internship-email" name="internship-email" required>
+          </div>
+          <div class="custom-form-group">
+            <label for="custom-internship-message">Message</label>
+            <textarea id="custom-internship-message" name="internship-message" required></textarea>
+          </div>
+          <div class="custom-form-group">
+            <label for="custom-resume">Upload Resume</label>
+            <input type="file" id="custom-resume" name="resume" required>
+          </div>
+          <button class="custom-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var contactForm = document.getElementById('contact-form');
-    var internshipForm = document.getElementById('internship-form');
-    var switchButton = document.getElementById('switch-form-btn');
-    var infoSectionHeading = document.querySelector('.info-section h1');
-    var infoSectionParagraph = document.querySelector('.info-section p');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/ionicons.min.js"></script>
+<script>
+  function toggleCustomForms() {
+    var infoParagraph = document.getElementById('custom-info-paragraph');
+    var contactFormSection = document.getElementById('custom-contact-form-section');
+    var internshipFormSection = document.getElementById('custom-internship-form-section');
+    var switchFormButton = document.getElementById('custom-switch-form-btn');
 
-    var originalSwitchButtonText = switchButton.textContent;
-    var originalHeadingText = infoSectionHeading.textContent;
-    var originalParagraphText = infoSectionParagraph.textContent;
+    if (contactFormSection.style.display === 'none') {
+      contactFormSection.style.display = 'block';
+      internshipFormSection.style.display = 'none';
+      switchFormButton.textContent = 'Internship';
+      infoParagraph.textContent = "Have questions or suggestions? We'd love to hear from you! Fill out the form, and our team of experts will get back to you as soon as possible. Your feedback is valuable to us, and we are here to assist you in any way we can.";
+    } else {
+      contactFormSection.style.display = 'none';
+      internshipFormSection.style.display = 'block';
+      switchFormButton.textContent = 'Contact Us';
+      infoParagraph.textContent = "Interested in an internship opportunity? Fill out the form, and our team will get back to you as soon as possible.";
+    }
+  }
 
-    switchButton.addEventListener('click', function() {
-        contactForm.style.display = contactForm.style.display === 'none' ? 'block' : 'none';
-        internshipForm.style.display = internshipForm.style.display === 'none' ? 'block' : 'none';
-
-        if (contactForm.style.display === 'none') {
-            switchButton.textContent = 'Switch to Contact Us';
-            infoSectionHeading.textContent = "Become an Instructor with NeevCode";
-            infoSectionParagraph.textContent = "Apply for an internship at NeevCode and kickstart your career in tech! We offer exciting opportunities to work on cutting-edge projects and grow your skills alongside industry experts. Fill out the form below to get started.";
-        } else {
-            switchButton.textContent = originalSwitchButtonText;
-            infoSectionHeading.textContent = originalHeadingText;
-            infoSectionParagraph.textContent = originalParagraphText;
-        }
-    });
-});
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  // Show contact form by default
+  document.addEventListener("DOMContentLoaded", function() {
+    var contactFormSection = document.getElementById('custom-contact-form-section');
+    var internshipFormSection = document.getElementById('custom-internship-form-section');
+    contactFormSection.style.display = 'block';
+    internshipFormSection.style.display = 'none';
+  });
+</script>
 {% endblock %}

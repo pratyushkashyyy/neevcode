@@ -1,30 +1,87 @@
 {% extends "base.html" %}
 {% block title %} Cart {% endblock %}
-{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}"> {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
 
 {% block content %}
-<div class="main">
-    <div class="contain">
-        <h1>Your Cart</h1>
+<div class="cart-container">
+    <div class="cart-header">
+        <h1>Cart</h1>
+            <!-- <div class="cart-steps">
+                <div class="step completed">
+                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                    <div class="step-label">Product Added</div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="step-label">In Cart</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <div class="step-label">Checkout</div>
+                </div> -->
+        </div>
+    </div>
+
+    <div class="cart-content">
         <div class="cart-items">
             {% for product, quantity in cart_items %}
                 <div class="cart-item">
-                    <img src="{{ product['image_url'] }}" alt="{{ product['product_name'] }}">
-                    <div class="cart-item-details">
-                        <h2>{{ product['product_name'] }}</h2>
-                        <p>Price: ${{ product['price'] }}</p>
-                        <p>Quantity: {{ quantity }}</p>
+                    <div class="item-image">
+                        <img src="{{ product['image_url'] }}" alt="{{ product['product_name'] }}">
+                    </div>
+                    <div class="item-details">
+                        <h5 class="item-name">{{ product['product_name'] }}</h5>
+                        <p class="item-price">${{ product['price'] }}</p>
+                    </div>
+                    <div class="item-quantity">
+                        <input type="number" value="{{ quantity }}" min="1" readonly>
+                    </div>
+                    <div class="item-subtotal">
+                        <p>${{ product['price'] * quantity }}</p>
+                    </div>
+                    <div class="item-remove">
                         <form action="{{ url_for('remove_cart') }}" method="post" style="display:inline;">
                             <input type="hidden" name="product_id" value="{{ product['id'] }}">
-                            <button type="submit" class="btn btn-remove">Remove</button>
+                            <button type="submit" class="btn-remove"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <div class="cart-total">
-            <h2>Total Amount: ${{ total_amount }}</h2>
-            <a href="{{ url_for('checkout') }}"><button class="btn">Proceed to Checkout</button></a>
+
+        <div class="cart-summary">
+            <div class="apply-coupon">
+                <input type="text" placeholder="Enter coupon code" class="coupon-input">
+                <button class="btn-apply-coupon">Apply Coupon</button>
+            </div>
+            <table>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td>${{ sub_total }}</td>
+                </tr>
+                <tr>
+                    <td>Discount:</td>
+                    <td>- ${{ discount }}</td>
+                </tr>
+                <tr>
+                    <td>Shipping Charge:</td>
+                    <td>${{ shipping_charge }}</td>
+                </tr>
+                <tr>
+                    <td>Estimated Tax:</td>
+                    <td>${{ estimated_tax }}</td>
+                </tr>
+                <tr class="total-row">
+                    <th>Total:</th>
+                    <th>${{ total_amount }}</th>
+                </tr>
+            </table>
+            <a href="{{ url_for('checkout') }}" class="btn-proceed">Proceed to Checkout</a>
+            <a href="{{ url_for('courses') }}" class="btn-continue">Continue Shopping</a>
         </div>
     </div>
 </div>
