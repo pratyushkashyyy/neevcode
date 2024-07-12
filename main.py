@@ -197,6 +197,8 @@ def admin_login():
 
     return render_template('admin_login.html')
 
+    
+
 @app.route('/admin')
 def admin_dashboard():
     if 'user' in session:
@@ -262,6 +264,13 @@ def admin_orders():
         return render_template('admin_orders.html', order_details=order_details)
     else:
         return redirect(url_for('admin_login'))
+
+@app.route('/admin/logout')
+def admin_logout():
+    session.pop('user', None)  # Remove the user from the session
+    flash('You have been logged out.', 'success')  # Optional: flash a message
+    return redirect(url_for('admin_login'))  # Redirect to the login page
+
 
 
 if __name__ == '__main__':

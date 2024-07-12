@@ -178,6 +178,35 @@ body{
     color: #0b6380; /* Change color on hover if needed */
 }
 
+/* Signout */
+
+.signout {
+    margin-top: auto; /* Pushes it to the bottom */
+    padding: 10px;
+    text-align: center; /* Center the text */
+}
+
+.signout a {
+    color: #fff; /* Change color as needed */
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Align icon and text */
+}
+
+.signout a:hover {
+    color: #f0a500; /* Change color on hover */
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+    height: 100vh; /* Full height */
+    background: #333; /* Background color */
+    color: #fff; /* Text color */
+}
+
+
 /*--------All Products-----------*/
 .orders-container {
     width: 80%;
