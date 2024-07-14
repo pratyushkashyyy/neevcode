@@ -16,7 +16,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
 
   <!-- 
     - custom css link
@@ -92,9 +92,9 @@
               <a href="/courses" class="navbar-link" data-nav-link target="_top">Courses</a>
             </li>
   
-            <li class="navbar-item">
+            <!-- <li class="navbar-item">
               <a href="/pricing" class="navbar-link" data-nav-link target="_top">Pricing</a>
-            </li>
+            </li> -->
   
             <li class="navbar-item">
               <a href="/contact" class="navbar-link" data-nav-link target="_top">Contact</a>
@@ -117,7 +117,7 @@
             <span class="btn-badge" id="cartItemCount">0</span>
           </button>
         
-          <a href="#" class="btn has-before">
+          <a href="/trial" class="btn has-before">
             <span class="span">Start Learning</span>
             <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </a>
@@ -133,25 +133,7 @@
       </div>
   </header>
   
-  <div class="cart-sidebar" id="cartSidebar">
-    <button class="close-sidebar-btn" onclick="window.location.href = '/cart';">Close</button>
-    <div class="cart-items">
-      <!-- Cart items will be dynamically added here -->
-    </div>
-    <button class="buy-now-btn">Buy Now</button>
-  </div>
   
-  <!-- Side Cart -->
-  <script>
-  function toggleCart() {
-  console.log("toggleCart() function called");
-  var sidebar = document.getElementById('cartSidebar');
-  console.log("Current right style:", sidebar.style.right);
-  sidebar.style.right = sidebar.style.right === '-300px' ? '0' : '-300px';
-  }
-  
-  </script>
-
 
   {% block content %}
   {% with messages = get_flashed_messages(with_categories=true) %}
@@ -192,7 +174,7 @@
           <div class="wrapper">
             <span class="span">Add:</span>
 
-            <address class="address">Bengaluru, Karnataka</address>
+            <address class="address">301, Vishwas Regency, 15th cross road, Neeladari Nagar, Bengaluru, Karnataka, 560100</address>
           </div>
 
           <div class="wrapper">

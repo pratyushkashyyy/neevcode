@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Admin-DashBoard - NeevCode </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_styles.css') }}">
 </head>
-<body>
-    <div class="admin-container">
-        <aside class="sidebar">
-            <h2>Admin Panel</h2>
-            <nav>
-                <ul>
-                    <li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ url_for('admin_all_product') }}">All Product</a></li>
-                    <li><a href="{{ url_for('admin_add_product') }}">Add Product</a></li>
-                    <li><a href="{{ url_for('admin_orders') }}">View Orders</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <header>
-                <h1>Dashboard</h1>
-            </header>
-            <section>
-                {% block content %}{% endblock %}
-            </section>
-        </main>
+<body class="active">
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Profile image & text -->
+        <div class="profile">
+            <img src="/static/images/admin_pic.png" alt="Admin Image"> <!-- Add your admin image here -->
+            <h3>NeevCode</h3> <!-- Add your admin name here -->
+            <p>Ceo/Founder</p> <!-- Add admin role here if needed -->
+        </div>
+
+        <!-- Menu items -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('admin_all_product') }}">All Product</a></li>
+                <li><a href="{{ url_for('admin_add_product') }}">Add Product</a></li>
+                <li><a href="{{ url_for('admin_orders') }}">View Orders</a></li>
+            </ul>
+        </nav>
+
+        <!-- Signout option -->
+        <div class="signout">
+            <a href="/admin/login"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+        </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="section">
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+            <div class="admin-heading">
+                <h1>Admin Dashboard</h1>
+            </div>
+        </div>
+
+        <!-- Content goes here -->
+    </div>
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+</div>
+
+<script>
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+</script>
 </body>
 </html>

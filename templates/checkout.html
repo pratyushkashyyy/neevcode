@@ -1,63 +1,146 @@
 {% extends "base.html" %}
 {% block title %} Checkout {% endblock %}
 {% block css %}   
-   <link rel="stylesheet" href="/static/css/checkout.css">
-   
+<link rel="stylesheet" href="/static/css/checkout.css">
 {% endblock %}
 {% block content %}
-<div class="main">
-    <h1>Checkout</h1>
-    <h2>Cart Items</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-            <tr>
-                <td>{{ product['product_name'] }}</td>
-                <td>₹{{ product['price'] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3> Total Bill : ₹{{ total }}</h3>
-
-    <h2>Billing Information</h2>
-    <form action="{{ url_for('checkout') }}" method="post">
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+<div class="checkout-container">
+    <div class="checkout-section cart-summary">
+        <div class="section-header">
+            <h1>Cart Summary</h1>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+        <div class="cart-items">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td><img src="{{ product['image_url'] }}" alt="{{ product['product_name'] }}" style="max-width: 100px;"></td>
+                        <td>{{ product['product_name'] }}</td>
+                        <td>₹{{ product['price'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
+        <div class="cart-total">
+            <h3>Total: ₹{{ total }}</h3>
         </div>
-        <div class="form-group">
-            <label for="address">Address</label>
-            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+    </div>
+    <div class="checkout-section billing-info">
+        <div class="section-header">
+            <h2>Billing Information</h2>
         </div>
-        <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" required>
-        </div>
-        <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control" id="state" name="state" required>
-        </div>
-        <div class="form-group">
-            <label for="zip">Zip Code</label>
-            <input type="text" class="form-control" id="zip" name="zip" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Proceed to Payment</button>
-    </form>
+        <form id="checkout-form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                <label for="name">Full Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                <label for="address">Address</label>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                    <label for="city">City</label>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+                    <label for="state">State</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code" required>
+                <label for="zip">Zip Code</label>
+            </div>
+            <button type="button" id="rzp-button1" class="btn btn-primary">Place Order</button>
+        </form>
+    </div>
 </div>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('rzp-button1').onclick = function(e){
+    e.preventDefault();
+    var form = document.getElementById('checkout-form');
+
+    // Validate form fields
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var address = document.getElementById('address').value.trim();
+    var city = document.getElementById('city').value.trim();
+    var state = document.getElementById('state').value.trim();
+    var zip = document.getElementById('zip').value.trim();
+
+    if (!name || !email || !phone || !address || !city || !state || !zip) {
+        alert('Please fill out all fields before proceeding.');
+        return;
+    }
+
+    var options = {
+        "key": "rzp_test_I4RI6OLrPcJeSM", // Enter the Key ID generated from the Dashboard
+        "amount": "{{ total * 100 }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "NEEV Code",
+        "description": "Test Transaction",
+        "image": "https://example.com/your_logo",
+        "order_id": "{{ order_id }}", // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "callback_url": "/success",
+        "prefill": {
+            "name": name,
+            "email": email,
+            "contact": phone
+        },
+        "notes": {
+            "address": address
+        },
+        "theme": {
+            "color": "#5cffab"
+        }
+    };
+
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.success', function(response) {
+        // Append the payment response to the form
+        var payment_id = document.createElement("input");
+        payment_id.type = "hidden";
+        payment_id.name = "payment_id";
+        payment_id.value = response.razorpay_payment_id;
+        form.appendChild(payment_id);
+
+        var order_id = document.createElement("input");
+        order_id.type = "hidden";
+        order_id.name = "order_id";
+        order_id.value = response.razorpay_order_id;
+        form.appendChild(order_id);
+
+        var signature = document.createElement("input");
+        signature.type = "hidden";
+        signature.name = "signature";
+        signature.value = response.razorpay_signature;
+        form.appendChild(signature);
+
+        // Submit the form
+        form.submit();
+    });
+
+    rzp1.open();
+};
+</script>
 {% endblock %}
