@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify
+from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify, g 
 import sqlite3
 from database import get_database
 import shortuuid
@@ -10,6 +10,11 @@ client = razorpay.Client(auth=("rzp_test_I4RI6OLrPcJeSM", "O0bjtxZVNQNNLbrLwOfL6
 
 def generate_short_uuid():
     return shortuuid.uuid()
+
+@app.before_request
+def before_request():
+    cart = session.get('cart',{})
+    g.total_items = sum(cart.values())
 
 @app.route('/')
 def index():
