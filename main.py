@@ -265,11 +265,21 @@ def admin_orders():
     else:
         return redirect(url_for('admin_login'))
 
+@app.route('/admin/order/delete/<int:id>')
+def admin_order_delete(id):
+    if 'user' in session:
+        db = get_database()
+        cursor = db.cursor()
+        product = cursor.execute("DELETE FROM product WHERE id = ?",(id,))
+        db.commit()
+        return redirect(url_for('admin_all_product'))
+        
+
 @app.route('/admin/logout')
 def admin_logout():
-    session.pop('user', None)  # Remove the user from the session
-    flash('You have been logged out.', 'success')  # Optional: flash a message
-    return redirect(url_for('admin_login'))  # Redirect to the login page
+    session.pop('user', None)  
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('admin_login'))
 
 
 

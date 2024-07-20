@@ -12,6 +12,7 @@
                 <th>Description</th>
                 <th>level</th>
                 <th>classes</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,9 @@
                     <td>{{ product.description }}</td>
                     <td>{{ product.level }}</td>
                     <td>{{ product.classes }}</td>
+                    <td><a href="/admin/order/delete/{{ product.id }}"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+                        <dotlottie-player src="https://lottie.host/f5fbd3ab-29f2-44e9-93e6-08f9976ae949/5kAJyIgRX3.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></dotlottie-player></a></td>
                 </tr>
             {% endfor %}
         </tbody>
