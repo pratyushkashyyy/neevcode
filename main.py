@@ -3,10 +3,12 @@ import sqlite3
 from database import get_database
 import shortuuid
 import razorpay
+import os
 
 app = Flask(__name__)
-app.secret_key = "This_is_a_secret_key"
-client = razorpay.Client(auth=("rzp_test_I4RI6OLrPcJeSM", "O0bjtxZVNQNNLbrLwOfL6p4E"))
+app.secret_key = "This_is_a_super_secret_key"
+client = razorpay.Client(auth=(os.getenv('RAZORPAY_KEY_ID'), os.getenv('RAZORPAY_KEY_SECRET')))
+
 
 def generate_short_uuid():
     return shortuuid.uuid()
@@ -15,6 +17,8 @@ def generate_short_uuid():
 def before_request():
     cart = session.get('cart',{})
     g.total_items = sum(cart.values())
+    g.RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID')
+    g.RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET')
 
 @app.route('/')
 def index():
@@ -144,7 +148,7 @@ def success():
     pid = request.form.get("razorpay_payment_id")
     ordid = request.form.get("razorpay_order_id")
     sign = request.form.get("razorpay_signature")
-    print(f"The payment id : {pid}, order id : {ordid} and signature : {sign}")
+    # print(f"The payment id : {pid}, order id : {ordid} and signature : {sign}")
     params = {
         'razorpay_order_id': ordid,
         'razorpay_payment_id': pid,
@@ -161,7 +165,9 @@ def success():
         db.execute('UPDATE orders SET status = ? WHERE user_id = ?', ('Cancelled', order_id))
         db.commit()
     db.commit()
-    return redirect("/", code=301)
+    cursor = db.cursor()
+    amount = cursor.execute("SELECT total_amount FROM orders WHERE razr_ordid = ?",(ordid,)).fetchone()['total_amount']
+    return render_template("success.html", code=301, amount=amount,pid=pid)
 
 @app.route('/pricing')
 def pricing():

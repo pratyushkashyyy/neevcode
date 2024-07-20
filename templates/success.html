@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        @keyframes success-animation {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d4edda;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .success-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            animation: success-animation 0.5s ease-in-out;
+        }
+        .success-container h1 {
+            color: #28a745;
+            animation: success-animation 1s ease-in-out;
+        }
+        .success-container p {
+            margin: 10px 0;
+        }
+        .details {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .thank-you {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #333;
+        }
+        .checkmark {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #28a745;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin: 0 auto 20px auto;
+            animation: success-animation 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="checkmark">✓</div>
+        <h1>Payment Successful!</h1>
+        <p>Your payment has been processed successfully.</p>
+        <div class="details">
+            <p><strong>Transaction ID:</strong> {{ pid }}</p>
+            <p><strong>Amount Paid:</strong> ₹{{ amount }}</p>
+            
+        </div>
+        <div class="thank-you">
+            Thank you for your purchase!
+        </div>
+    </div>
+</body>
+</html>
